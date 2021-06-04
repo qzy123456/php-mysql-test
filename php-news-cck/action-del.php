@@ -1,17 +1,32 @@
 <?php
-// 处理删除操作的页面 
+// 1.导入配置文件
 require "dbconfig.php";
-// 连接mysql
-$link = @mysql_connect(HOST,USER,PASS) or die("提示：数据库连接失败！");
-// 选择数据库
-mysql_select_db(DBNAME,$link);
-// 编码设置
-mysql_set_charset('utf8',$link);
+session_start();
+if(!isset($_SESSION['user_id'])){
+    header('Location:login.php');
+}
+// 2. 连接mysql
+$link = new PDO('mysql:host='.HOST.';dbname='.DBNAME, USER, PASS);
+$link -> exec("set character_set_client='utf8'");
 
-$id = $_GET['id'];
-//删除指定数据  
-mysql_query("DELETE FROM news WHERE id={$id}",$link) or die('删除数据出错：'.mysql_error()); 
-// 删除完跳转到新闻页
-header("Location:demo.php");  
+$link -> exec("set character_set_results='utf8'");
+
+$link -> exec("set collation_connection='utf8_general_ci'");
+
+
+// 设置 PDO 错误模式为异常
+$link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$sid = $_GET['S'];
+$cid = $_GET['C'];
+if(empty($sid) || empty($cid)){
+    header("Location:index.php");
+}
+//删除数据
+$sql = "DELETE FROM t_student_course where  `S#` = '$sid' and `C#` = '$cid' ";
+
+$result=$link->prepare($sql)->execute();
+header("Location:index.php");
+
 
 

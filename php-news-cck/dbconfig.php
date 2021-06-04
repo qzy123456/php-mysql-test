@@ -1,5 +1,5 @@
 <?php  
-define("HOST","localhost");  
+define("HOST","192.168.16.51");
 define("USER","root");  
-define("PASS","caochangkui1990");
-define("DBNAME","news20180111");
+define("PASS","root");
+define("DBNAME","TeachingDB");
