@@ -85,7 +85,7 @@ td {text-align: center;}
 				$sql = "SELECT * FROM t_student_course INNER JOIN t_student INNER JOIN t_course
 WHERE t_student_course.`S#` = t_student.`S#`  
 and  t_student_course.`C#` = t_course.`C#`  
-and  t_student_course.`C#` in (SELECT t_course.`C#` FROM t_course WHERE t_course.`T#` = 't001')";
+and  t_student_course.`C#` in (SELECT t_course.`C#` FROM t_course WHERE t_course.`T#` = '{$_SESSION['user_id']}')";
             //array(20) { ["S#"]=> string(7) "2012001" [0]=> string(7) "2012001"
             // ["C#"]=> string(4) "c001" [1]=> string(4) "c001"
             // ["Score"]=> string(2) "87" [2]=> string(2) "87" [3]=> string(7) "2012001"
