@@ -57,15 +57,15 @@ td {text-align: center;}
 	<div class="wrapper">
 		<h2>后台管理系统</h2>
         <div class="main">
-		<table width="960" border="1">
+		<table width="960" border="1" >
 			<tr>
-				<th>学号</th>
-				<th>姓名</th>
-				<th>分数</th>
-				<th>课程</th>
-				<th>性别</th>
-				<th>年龄</th>
-				<th>操作</th>
+				<th style="text-align: center">学号</th>
+				<th style="text-align: center">姓名</th>
+				<th style="text-align: center">分数</th>
+				<th style="text-align: center">课程</th>
+				<th style="text-align: center">性别</th>
+				<th style="text-align: center">年龄</th>
+				<th style="text-align: center">操作</th>
 			</tr>
 
 			<?php
