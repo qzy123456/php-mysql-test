@@ -127,6 +127,7 @@ CREATE TABLE `t_teacher` (
   `Tname` varchar(255) NOT NULL,
   `Age` int(11) DEFAULT NULL,
   `Title` varchar(255) DEFAULT NULL,
+  `Pass` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`T#`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -134,16 +135,16 @@ CREATE TABLE `t_teacher` (
 -- Records of t_teacher
 -- ----------------------------
 BEGIN;
-INSERT INTO `t_teacher` VALUES ('t001', '李明', 40, '副教授');
-INSERT INTO `t_teacher` VALUES ('t002', '赵云', 45, '教授');
-INSERT INTO `t_teacher` VALUES ('t003', '陈军', 30, '讲师');
-INSERT INTO `t_teacher` VALUES ('t004', '韩伟', 32, '副教授');
-INSERT INTO `t_teacher` VALUES ('t005', '刘红', 35, '副教授');
-INSERT INTO `t_teacher` VALUES ('t006', '张雷', 33, '副教授');
-INSERT INTO `t_teacher` VALUES ('t007', '李敏', 28, '讲师');
-INSERT INTO `t_teacher` VALUES ('t008', '钟燕', 31, '讲师');
-INSERT INTO `t_teacher` VALUES ('t009', '王海', 34, '副教授');
-INSERT INTO `t_teacher` VALUES ('t010', '李亚', 46, '教授');
+INSERT INTO `t_teacher` VALUES ('t001', '李明', 40, '副教授','123456');
+INSERT INTO `t_teacher` VALUES ('t002', '赵云', 45, '教授','123456');
+INSERT INTO `t_teacher` VALUES ('t003', '陈军', 30, '讲师','123456');
+INSERT INTO `t_teacher` VALUES ('t004', '韩伟', 32, '副教授','123456');
+INSERT INTO `t_teacher` VALUES ('t005', '刘红', 35, '副教授','123456');
+INSERT INTO `t_teacher` VALUES ('t006', '张雷', 33, '副教授','123456');
+INSERT INTO `t_teacher` VALUES ('t007', '李敏', 28, '讲师','123456');
+INSERT INTO `t_teacher` VALUES ('t008', '钟燕', 31, '讲师','123456');
+INSERT INTO `t_teacher` VALUES ('t009', '王海', 34, '副教授','123456');
+INSERT INTO `t_teacher` VALUES ('t010', '李亚', 46, '教授','123456');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
