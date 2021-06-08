@@ -15,9 +15,9 @@ $link -> exec("set collation_connection='utf8_general_ci'");
 $link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $username = $_POST['username'];
-//$pass = $_POST['Sname'];
+$pass = $_POST['password'];
 //查询重复插入
-$sql1 = "select * from t_teacher where `T#` = '$username' ";
+$sql1 = "select * from t_teacher where `T#` = '$username' and `Pass` = '$pass' ";
 $result=$link->query($sql1);
 if($result && $result->rowCount()){ //判断结果集对象是否存在,并且结果集数量是否大于0,也就是说是否存在数据
     //rowCount()是结果集中的一个方法，可以返回当前结果集中的记录条数
