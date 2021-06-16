@@ -14,7 +14,7 @@ $link -> exec("set character_set_results='utf8'");
 $link -> exec("set collation_connection='utf8_general_ci'");
 
 // 插入数据
-$sql = "select * from t_course";
+$sql = "select * from t_course where `T#` = '{$_SESSION['user_id']}' ";
 // 设置 PDO 错误模式为异常
 $link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $res=$link->query($sql);
@@ -110,9 +110,11 @@ html,body {
 </style>
 
 </head>
+<script src="jquery-3.5.1.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<script src="bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
 <body>
 <div class="container">
     <div class="row">
@@ -167,6 +169,14 @@ html,body {
 						</div>
 					</div>
 				</div>
+                <div class="form-group">
+                    <div class="col-xs-12  ">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                            <input class="form-control" type="number" name='score' placeholder="分数 0-100">
+                        </div>
+                    </div>
+                </div>
 				<div class="form-group form-actions">
 					<div class="col-xs-4 col-xs-offset-4 ">
 						<button type="submit" class="btn btn-sm btn-info">登录</button>

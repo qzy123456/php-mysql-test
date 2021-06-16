@@ -19,6 +19,7 @@ $link -> exec("set collation_connection='utf8_general_ci'");
 $link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $xuehao = $_POST['S#'];
 $kecheng = $_POST['C#'];
+$score  =  $_POST['score'];
 //查询重复插入
 $sql1 = "select * from t_student_course where `S#` = '$xuehao' and  `C#` = '$kecheng' ";
 $result1=$link->prepare($sql1)->execute();
@@ -26,7 +27,7 @@ if($result1){
     header("Location:index.php");
 }
 // 插入数据
-$sql = "INSERT INTO t_student_course(`S#`,`C#`,`Score`) VALUES ('$xuehao','$kecheng',0)";
+$sql = "INSERT INTO t_student_course(`S#`,`C#`,`Score`) VALUES ('$xuehao','$kecheng','$score')";
 
 $result=$link->prepare($sql)->execute();
 header("Location:index.php");

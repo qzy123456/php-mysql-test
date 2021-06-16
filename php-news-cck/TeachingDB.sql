@@ -82,8 +82,8 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `t_student_course`;
 CREATE TABLE `t_student_course` (
-  `S#` char(10) NOT NULL,
-  `C#` char(10) NOT NULL,
+  `S#` char(255) NOT NULL,
+  `C#` char(255) NOT NULL,
   `Score` int(11) DEFAULT NULL,
   PRIMARY KEY (`S#`,`C#`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
